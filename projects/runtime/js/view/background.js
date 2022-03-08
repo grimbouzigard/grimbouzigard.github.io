@@ -27,6 +27,8 @@ var background = function (window) {
         
         // ANIMATION VARIABLES HERE:
         var tree;
+        var buildings = [];
+
 
         // called at the start of game and whenever the page is resized
         // add objects for display in background. draws each image added to the background once
@@ -59,6 +61,14 @@ var background = function (window) {
             
             // TODO 5: Part 1 - Add buildings!     Q: This is before TODO 4 for a reason! Why?
             
+            for(var i = 0; i < 5; i++){
+                var buildingHeight = 300;//creates a variable that holds the height of the building
+                var building = draw.rect(75,buildingHeight,'LightGray','Black',1); // creates a variable for the building
+                building.x = 200*i; //positions the x of each building 200 pixels
+                building.y = groundY-buildingHeight; // stes the y of the building to ground level
+                background.addChild(building); // adds building to background
+                buildings.push(building); // pushes each individual to the array
+            }
             
             // TODO 4: Part 1 - Add a tree
             tree = draw.bitmap('img/tree.png');
@@ -84,7 +94,12 @@ var background = function (window) {
             }
             
             // TODO 5: Part 2 - Parallax
-            
+            for (var i = 0; i < buildings.length; i++){
+                buildings[i].x = buildings[i].x - 0.5; //moves the x position to .5
+                if(buildings[i].x < 0) { //checks to see if the x position is off the left side of so it resets
+                    buildings[i].x = canvasWidth
+                }
+            }
 
         } // end of update function - DO NOT DELETE
         
