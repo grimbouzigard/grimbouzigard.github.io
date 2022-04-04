@@ -52,8 +52,8 @@ var background = function (window) {
             }
             
             var moon = draw.bitmap('img/moon.png'); //created a variable called moon. draw.bitmap stores it in the variable
-            moon.x = 800; //moves the moon left and right
-            moon.y = 200; //moves the moon up and down
+            moon.x = 1200; //moves the moon left and right
+            moon.y = 100; //moves the moon up and down
             moon.scaleX = 0.5; //scales the moon stretches the moon horizontal
             moon.scaleY = 0.5; //scales the moon stretches the moon vertical
             background.addChild(moon); //lets us see the moon on the screen
@@ -61,19 +61,21 @@ var background = function (window) {
             
             // TODO 5: Part 1 - Add buildings!     Q: This is before TODO 4 for a reason! Why?
             
-            for(var i = 0; i < 5; i++){
-                var buildingHeight = 300;//creates a variable that holds the height of the building
-                var building = draw.rect(75,buildingHeight,'LightGray','Black',1); // creates a variable for the building
-                building.x = 200*i; //positions the x of each building 200 pixels
-                building.y = groundY-buildingHeight; // stes the y of the building to ground level
-                background.addChild(building); // adds building to background
-                buildings.push(building); // pushes each individual to the array
-            }
+           // for(var i = 0; i < 5; i++){
+                //var buildingHeight = 300;//creates a variable that holds the height of the building
+                //var building = draw.rect(75,buildingHeight,'LightGray','Black',1); // creates a variable for the building
+                //building.x = 200*i; //positions the x of each building 200 pixels
+               // building.y = groundY-buildingHeight; // stes the y of the building to ground level
+               // background.addChild(building); // adds building to background
+               // buildings.push(building); // pushes each individual to the array
+          //  }
             
             // TODO 4: Part 1 - Add a tree
             tree = draw.bitmap('img/tree.png');
-            tree.x = 0; //decides 
-            tree.y = groundY - 250; //decides the y location of the tree
+            tree.x = 0; //decides the x location
+            tree.y = groundY - 480; //decides the y location of the tree
+            tree.scaleX = 0.5;
+            tree.scaleY = 0.5;
             background.addChild(tree); 
             
         } // end of render function - DO NOT DELETE
